@@ -1,0 +1,43 @@
+.about-wrapper {
+  max-width: 1170px;
+  width: 100%;
+
+  margin: 0 auto;
+  margin-top: 80px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  &__image {
+    width: 438px;
+    height: 453px;
+    position: relative;
+  }
+
+  &__description {
+    max-width: 570px;
+    width: 100%;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 78px;
+
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      color: #ffffff;
+    }
+  }
+}
