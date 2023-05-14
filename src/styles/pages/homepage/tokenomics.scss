@@ -1,0 +1,86 @@
+.tokenomics-wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+
+  &__supply {
+    width: 776px;
+    height: 196px;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: -98px;
+    padding: 20px 118px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 78px;
+    color: #6dffb0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background: #253199;
+    border: 1px solid #000000;
+    border-radius: 12px;
+
+    position: relative;
+    z-index: 1;
+
+    h3 {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 4px 0px #1f286d;
+    backdrop-filter: blur(21px);
+    padding: 147px 70px 75px 76px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+      width: 440px;
+      height: 518px;
+      position: relative;
+    }
+
+    .description {
+      padding: 40px 10px;
+      margin-top: -98px;
+      list-style-type: disc;
+
+      width: 530px;
+      height: 400px;
+
+      background: #0f0d30;
+      border-radius: 24px;
+
+      li {
+        margin-left: 30px;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        color: #ffffff;
+      }
+    }
+  }
+}

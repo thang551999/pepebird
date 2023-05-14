@@ -144,7 +144,7 @@ export function roundToPrecision(numStr: string, scale: number, fixedDecimalScal
   //if number is empty don't do anything return empty string
   if (['', '-'].indexOf(numStr) !== -1) return numStr;
 
-  const shoudHaveDecimalSeparator = numStr.indexOf('.') !== -1 && scale;
+  const shouldHaveDecimalSeparator = numStr.indexOf('.') !== -1 && scale;
   const { beforeDecimal, afterDecimal, hasNagation } = splitDecimal(numStr);
   const floatValue = parseFloat(`0.${afterDecimal || '0'}`);
   const floatValueStr = afterDecimal.length <= scale ? toNumericString(floatValue) : floatValue.toFixed(scale);
@@ -165,7 +165,7 @@ export function roundToPrecision(numStr: string, scale: number, fixedDecimalScal
     fixedDecimalScale,
   );
   const negation = hasNagation ? '-' : '';
-  const decimalSeparator = shoudHaveDecimalSeparator ? '.' : '';
+  const decimalSeparator = shouldHaveDecimalSeparator ? '.' : '';
   return `${negation}${intPart}${decimalSeparator}${decimalPart}`;
 }
 
@@ -177,7 +177,7 @@ export function omit(obj: Object, keyMaps: Object) {
   return filteredObj;
 }
 
-/** set the caret positon in an input field **/
+/** set the caret position in an input field **/
 export function setCaretPosition(el: HTMLInputElement, caretPos: number) {
   // eslint-disable-next-line no-self-assign
   el.value = el.value;

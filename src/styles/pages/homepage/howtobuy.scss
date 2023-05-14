@@ -1,0 +1,111 @@
+.how-to-buy-wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 0 57px;
+
+  &__image {
+    width: 370px;
+    height: 421px;
+    position: relative;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 65px 0;
+
+    max-width: 770px;
+    width: 100%;
+
+    h2 {
+      margin: unset;
+      padding: unset;
+
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 78px;
+
+      text-align: end;
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 55px 0;
+    margin-left: 50px;
+
+    .htb-item {
+      max-width: 743px;
+      height: 242px;
+      width: 100%;
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 0 32px;
+
+      .text {
+        max-width: 500px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: 20px;
+        z-index: 1;
+      }
+
+      h2 {
+        margin: unset;
+        padding: unset;
+        text-align: unset;
+
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 78px;
+        color: #ffffff;
+      }
+
+      p {
+        margin: unset;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        color: #ffffff;
+      }
+
+      .image {
+        width: 170px;
+        height: 123px;
+
+        position: absolute;
+        z-index: 1;
+
+        top: -33px;
+        left: -25px;
+      }
+
+      .background {
+        width: 100%;
+        height: 100%;
+
+        background: #253199;
+        border: 1px solid #000000;
+        box-shadow: 0px 15px 59px rgba(7, 39, 154, 0.4);
+        border-radius: 12px;
+
+        position: absolute;
+        transform: skew(20deg);
+        left: 20px;
+        // background: #ffffff url('/homepage/background_meme.png') no-repeat center center;
+      }
+    }
+  }
+}

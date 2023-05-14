@@ -399,7 +399,7 @@ class NumberFormat extends React.Component<any> {
   }
   /** caret specific methods ends **/
 
-  /** methods to remove formattting **/
+  /** methods to remove formatting **/
   removePrefixAndSuffix(val: string) {
     const { format, prefix, suffix } = this.props;
 
@@ -473,7 +473,7 @@ class NumberFormat extends React.Component<any> {
 
     return val;
   }
-  /** methods to remove formattting end **/
+  /** methods to remove formatting end **/
 
   /*** format specific methods start ***/
   /**
@@ -645,7 +645,7 @@ class NumberFormat extends React.Component<any> {
 
   /**
    * This will check if any formatting got removed by the delete or backspace and reset the value
-   * It will also work as fallback if android chome keyDown handler does not work
+   * It will also work as fallback if android chrome keyDown handler does not work
    **/
   correctInputValue(caretPos: number, lastValue: string, value: string) {
     const { format, allowNegative, prefix, suffix, decimalScale } = this.props;
@@ -674,7 +674,7 @@ class NumberFormat extends React.Component<any> {
       (selectionStart === 0 && selectionEnd === lastValue.length) ||
       // or in case if the whole content is replaced by browser, example (autocomplete)
       (start === 0 && end === lastValue.length) ||
-      // or if charcters between prefix and suffix is selected.
+      // or if characters between prefix and suffix is selected.
       // For numeric inputs we apply the format so, prefix and suffix can be ignored
       (selectionStart === leftBound && selectionEnd === rightBound)
     ) {

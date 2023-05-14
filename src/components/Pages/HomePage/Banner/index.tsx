@@ -13,7 +13,7 @@ const HomePageBanner = () => {
       <div className='homepage-banner__left'>
         <h1>Blue Bird PePe</h1>
         <p>
-          the most memeable memecoin in existence. The dogs have had their day, it’s time for Blue Bird PePe to take
+          the most memeable memecoin in existence. The dogs have had their day, its time for Blue Bird PePe to take
           reign.
         </p>
 
