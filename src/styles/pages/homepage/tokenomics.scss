@@ -1,8 +1,15 @@
 .tokenomics-wrapper {
-  max-width: 1170px;
-  width: 100%;
-  margin: 0 auto;
   margin-top: 120px;
+  position: relative;
+
+  .container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
+  }
 
   h2 {
     font-weight: 700;
@@ -60,6 +67,7 @@
       width: 440px;
       height: 518px;
       position: relative;
+      z-index: 1;
     }
 
     .description {
@@ -82,5 +90,13 @@
         color: #ffffff;
       }
     }
+  }
+
+  .union-background {
+    width: 672px;
+    height: 1002.22px;
+    position: absolute;
+    left: 0;
+    bottom: -40%;
   }
 }

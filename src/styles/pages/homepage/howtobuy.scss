@@ -8,6 +8,9 @@
   justify-content: space-between;
   gap: 0 57px;
 
+  position: relative;
+  z-index: 1;
+
   &__image {
     width: 370px;
     height: 421px;
