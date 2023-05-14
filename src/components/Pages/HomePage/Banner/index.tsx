@@ -16,10 +16,13 @@ const HomePageBanner = () => {
           the most memeable memecoin in existence. The dogs have had their day, its time for Blue Bird PePe to take
           reign.
         </p>
-
         <Space size={12}>
-          <TelegramIcon />
-          <TwitterIcon />
+          <a target='_blank' href='https://t.me/bluebirdpepe' rel='noopener noreferrer'>
+            <TelegramIcon />
+          </a>
+          <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
+            <TwitterIcon />
+          </a>
           <BNBIcon />
         </Space>
 
