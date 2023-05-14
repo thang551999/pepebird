@@ -1,3 +1,5 @@
+import Image from 'next/legacy/image';
+
 import AboutSection from './About';
 import HomePageBanner from './Banner';
 import HowToBuySection from './HowToBuy';
@@ -19,6 +21,10 @@ const HomePage = () => {
       <RoadMapSection />
 
       <NoticeSection />
+
+      <div className='background'>
+        <Image alt='nft-image' src='/homepage/background-homepage.png' layout='fill' />
+      </div>
     </>
   );
 };

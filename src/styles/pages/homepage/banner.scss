@@ -2,6 +2,8 @@
   margin-top: 30px;
   margin-bottom: 86px;
 
+  position: relative;
+
   &-banner {
     max-width: 1170px;
     width: 100%;
@@ -10,6 +12,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: relative;
+    z-index: 1;
 
     &__left {
       max-width: 470px;

@@ -13,24 +13,30 @@ const tokennomicsText = [
 const TokenomicsSection = () => {
   return (
     <div className='tokenomics-wrapper'>
-      <h2>TOKENOMICS</h2>
+      <div className='container'>
+        <h2>TOKENOMICS</h2>
 
-      <div className='tokenomics-wrapper__supply'>
-        <h3>Token Supply:</h3>
-        <h3>420,690,000,000,000</h3>
-      </div>
-
-      <div className='tokenomics-wrapper__description'>
-        <div className='image'>
-          <Image alt='how-to-buy' src='/homepage/tokenomics.png' layout='fill' />
+        <div className='tokenomics-wrapper__supply'>
+          <h3>Token Supply:</h3>
+          <h3>420,690,000,000,000</h3>
         </div>
 
-        <ul className='description'>
-          {tokennomicsText.map((item, index: number) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        <div className='tokenomics-wrapper__description'>
+          <div className='image'>
+            <Image alt='how-to-buy' src='/homepage/tokenomics.png' layout='fill' />
+          </div>
+
+          <ul className='description'>
+            {tokennomicsText.map((item, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
+
+      {/* <div className='union-background'>
+        <Image alt='nft-image' src='/homepage/bg-union2.png' layout='fill' />
+      </div> */}
     </div>
   );
 };
