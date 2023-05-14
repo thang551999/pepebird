@@ -19,6 +19,8 @@ const HomePage = () => {
       <RoadMapSection />
 
       <NoticeSection />
+
+      <div>123</div>
     </>
   );
 };
