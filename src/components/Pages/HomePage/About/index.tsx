@@ -3,7 +3,7 @@ import Image from 'next/legacy/image';
 
 const AboutSection = () => {
   return (
-    <div className='about-wrapper'>
+    <div className='about-wrapper' id='about'>
       <div className='container'>
         <div className='about-wrapper__image'>
           <Image alt='nft-image' src='/homepage/about.png' layout='fill' />

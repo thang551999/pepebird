@@ -10,10 +10,10 @@ const { Header: HeaderAntd } = Layout;
 const { useBreakpoint } = Grid;
 
 const navbarItems = [
-  { name: 'About', href: '/' },
-  { name: 'How to buy', href: '/about' },
-  { name: 'Tokenomics', href: '/contact' },
-  { name: 'Roadmap', href: '/roadmap' },
+  { name: 'About', href: '#about' },
+  { name: 'How to buy', href: '#how-to-buy' },
+  { name: 'Tokenomics', href: '#tokenomics' },
+  { name: 'Roadmap', href: '#roadmap' },
 ];
 
 const Header: FC = () => {

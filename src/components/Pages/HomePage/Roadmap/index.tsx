@@ -49,7 +49,7 @@ const RoadMapData = [
 
 const RoadMapSection: FC = () => {
   return (
-    <div className='roadmap-wrapper'>
+    <div className='roadmap-wrapper' id='roadmap'>
       <h2>Roadmap</h2>
       <h3>Rough expectation:</h3>
 

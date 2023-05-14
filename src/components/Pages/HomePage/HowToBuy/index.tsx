@@ -40,7 +40,7 @@ const HowToBuySection = () => {
   }, []);
 
   return (
-    <div className='how-to-buy-wrapper'>
+    <div className='how-to-buy-wrapper' id='how-to-buy'>
       <div
         className='how-to-buy-wrapper__image'
         style={{ marginTop: scrollPosition - 1360 < 0 ? 0 : scrollPosition - 1260 > 850 ? 850 : scrollPosition - 1260 }}

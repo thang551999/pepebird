@@ -12,7 +12,7 @@ const tokennomicsText = [
 
 const TokenomicsSection = () => {
   return (
-    <div className='tokenomics-wrapper'>
+    <div className='tokenomics-wrapper' id='tokenomics'>
       <div className='container'>
         <h2>TOKENOMICS</h2>
 
