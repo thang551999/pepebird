@@ -12,10 +12,6 @@ const HomePageBanner = () => {
     <div className='homepage-banner'>
       <div className='homepage-banner__left'>
         <h1>Blue Bird PePe</h1>
-        <p>
-          the most memeable memecoin in existence. The dogs have had their day, its time for Blue Bird PePe to take
-          reign.
-        </p>
         <Space size={12}>
           <a target='_blank' href='https://t.me/bluebirdpepe' rel='noopener noreferrer'>
             <TelegramIcon />

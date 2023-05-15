@@ -64,7 +64,7 @@ const ClaimBBPEPESection = () => {
         <Countdown date={deadline} renderer={renderCountdown} />,
       </div>
 
-      <Button className='claim-wrapper__register-btn'>REGISTER</Button>
+      <Button className='claim-wrapper__register-btn'>Connect your wallet to register</Button>
     </div>
   );
 };

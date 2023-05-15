@@ -22,7 +22,7 @@ export const navbarItems = [
 const Header: FC = () => {
   const router = useRouter();
   const { md } = useBreakpoint();
-  const { pathname } = router;
+  const { pathname, asPath } = router;
 
   return (
     <>
@@ -37,7 +37,7 @@ const Header: FC = () => {
 
             <div className='app-header-menu'>
               {navbarItems.map((item, index: number) => (
-                <Link key={index} href={item.href} className={classNames({ activeUrl: pathname === item.href })}>
+                <Link key={index} href={item.href} className={classNames({ activeUrl: asPath.includes(item.href) })}>
                   {item.name}
                 </Link>
               ))}
