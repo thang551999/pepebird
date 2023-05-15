@@ -1,0 +1,60 @@
+.blue-bird-wrapper {
+  max-width: 770px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 170px;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 120px;
+  }
+
+  p {
+    max-width: 500px;
+    width: 100%;
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    /* or 150% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+
+  .open-quote {
+    position: absolute;
+    top: -35px;
+    left: 0;
+
+    @media screen and (max-width: 768px) {
+      top: -70px;
+    }
+  }
+
+  .close-quote {
+    position: absolute;
+    bottom: 41px;
+    right: 0;
+
+    @media screen and (max-width: 768px) {
+      bottom: -70px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.ant-drawer {
+  .ant-drawer-content-wrapper {
+    width: 100% !important;
+  }
+
+  &-title {
+    width: 100%;
+
+    .ant-space {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-content {
+    background: #1d1947 !important;
+  }
+
+  &-body {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+
+    a {
+      cursor: pointer;
+
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 22px;
+      text-align: justify;
+      color: #ffffff;
+    }
+
+    .activeUrl {
+      color: #5abdff;
+    }
+  }
+}

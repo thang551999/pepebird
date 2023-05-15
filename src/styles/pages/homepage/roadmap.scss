@@ -8,6 +8,14 @@
   position: relative;
   z-index: 1;
 
+  @media screen and (max-width: 768px) {
+    margin: -20px;
+    margin-top: 32px;
+
+    max-width: unset;
+    width: unset;
+  }
+
   h2,
   h3 {
     display: block;
@@ -21,6 +29,11 @@
     line-height: 78px;
     text-transform: uppercase;
     color: #ffffff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 48px;
+    }
   }
 
   h3 {
@@ -28,6 +41,14 @@
     font-size: 32px;
     line-height: 78px;
     color: #ffffff;
+
+    @media screen and (max-width: 768px) {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+
+      color: #6dffb0;
+    }
   }
 
   &__image {
@@ -39,19 +60,53 @@
   .ps-timeline-sec {
     position: relative;
 
+    @media screen and (max-width: 768px) {
+      height: 450px;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
     .container {
       position: relative;
       height: 100%;
 
+      @media screen and (max-width: 768px) {
+        overflow-x: scroll;
+        height: 100%;
+        padding: unset;
+      }
+
       ol {
         height: 100%;
+
+        li {
+          @media screen and (max-width: 768px) {
+            min-width: 140px;
+          }
+        }
 
         &.ps-timeline {
           padding: 0;
           margin-top: calc(156px + 54px);
 
-          border-top: 2px solid $brand-color-g;
+          border-top: 2px solid #1e9cf0;
           list-style: none;
+
+          @media screen and (max-width: 768px) {
+            margin-top: unset;
+            border: unset;
+            overflow-x: scroll;
+
+            display: flex;
+            align-items: center;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
 
           li {
             float: left;
@@ -62,11 +117,18 @@
             display: flex;
             justify-content: center;
 
+            @media screen and (max-width: 768px) {
+              width: 100%;
+              border-top: 2px solid #1e9cf0;
+              width: 1000px !important;
+            }
+
             .point-wrap {
               position: absolute;
               top: 0%;
               left: 50%;
               transform: translate(-50%, -50%);
+              z-index: 1;
             }
 
             .number-top {

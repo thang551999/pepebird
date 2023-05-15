@@ -25,26 +25,9 @@ const HowToBuyItem = [
 ];
 
 const HowToBuySection = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const scrolled = winScroll;
-    setScrollPosition(scrolled);
-  };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <div className='how-to-buy-wrapper' id='how-to-buy'>
-      <div
-        className='how-to-buy-wrapper__image'
-        style={{ marginTop: scrollPosition - 1360 < 0 ? 0 : scrollPosition - 1260 > 850 ? 850 : scrollPosition - 1260 }}
-      >
+      <div className='how-to-buy-wrapper__image'>
         <Image alt='how-to-buy' src='/homepage/howtobuy.png' layout='fill' />
       </div>
 

@@ -2,6 +2,8 @@ import Image from 'next/legacy/image';
 
 import AboutSection from './About';
 import HomePageBanner from './Banner';
+import BlueBirdQuoteSection from './BlueBirdQuote';
+import ClaimBBPEPESection from './ClaimBBPEPE';
 import HowToBuySection from './HowToBuy';
 import NoticeSection from './Notice';
 import RoadMapSection from './Roadmap';
@@ -12,7 +14,11 @@ const HomePage = () => {
     <>
       <HomePageBanner />
 
+      <BlueBirdQuoteSection />
+
       <AboutSection />
+
+      <ClaimBBPEPESection />
 
       <HowToBuySection />
 

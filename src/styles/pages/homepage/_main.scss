@@ -1,6 +1,14 @@
 @import './banner.scss';
-@import './notice.scss';
+@import './bluebirdquote.scss';
+@import './claimbbpepe.scss';
+@import './about.scss';
 @import './howtobuy.scss';
 @import './tokenomics.scss';
-@import './about.scss';
 @import './roadmap.scss';
+@import './notice.scss';
+
+.homepage {
+  @media screen and (max-width: $breakpoint_ultra_tablet_max) {
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,162 @@
+.claim-wrapper {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 4px 0px #1f286d;
+  backdrop-filter: blur(21px);
+  border-radius: 24px;
+
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 32px;
+  }
+
+  &__button {
+    background: #253199;
+    border: 1px solid #000000;
+    box-shadow: 0px 15px 59px rgba(7, 39, 154, 0.4);
+    border-radius: 12px;
+
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 78px;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #ffffff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 48px;
+      white-space: pre-wrap;
+    }
+  }
+
+  &__data {
+    margin-top: 24px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0px 4px 54px rgba(0, 0, 0, 0.1);
+  }
+
+  &__total {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #ffffff;
+    text-shadow: 0px 4px 54px rgba(0, 0, 0, 0.1);
+  }
+
+  .ant-progress {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ant-progress-outer {
+      height: 12px;
+      background: #0f0d30;
+      border-radius: 24px;
+
+      .ant-progress-inner {
+        display: unset;
+
+        .ant-progress-bg {
+          background: #1d9bf0;
+        }
+      }
+    }
+  }
+
+  &__countdown {
+    margin-top: 24px;
+
+    .countdown-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 30px;
+
+      @media screen and (max-width: 768px) {
+        gap: 0 20px;
+      }
+
+      .ant-space {
+        display: flex;
+        flex-direction: column;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 4px;
+
+        width: 70px;
+
+        background: #11131a;
+        backdrop-filter: blur(20px);
+        border-radius: 12px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        color: #ffffff;
+
+        p {
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 17px;
+          text-align: center;
+          text-transform: capitalize;
+          color: #7d8bba;
+        }
+      }
+    }
+  }
+
+  &__register-btn {
+    margin-top: 24px;
+    width: 100%;
+    height: 56px;
+
+    background: #17e466;
+    border: 3px solid #000000;
+    border-radius: 40px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
