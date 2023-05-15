@@ -6,10 +6,13 @@ import { useRouter } from 'next/router';
 import { Button, Grid, Layout, Space } from 'antd';
 import classNames from 'classnames';
 
+import AppHeaderMobile from './AppHeaderMobile';
+
 const { Header: HeaderAntd } = Layout;
+
 const { useBreakpoint } = Grid;
 
-const navbarItems = [
+export const navbarItems = [
   { name: 'About', href: '#about' },
   { name: 'How to buy', href: '#how-to-buy' },
   { name: 'Tokenomics', href: '#tokenomics' },
@@ -18,28 +21,35 @@ const navbarItems = [
 
 const Header: FC = () => {
   const router = useRouter();
+  const { md } = useBreakpoint();
   const { pathname } = router;
 
   return (
-    <HeaderAntd className='app-header'>
-      <Space size={63}>
-        <div className='app-header-logo'>
-          <Link href='/'>
-            <Image src='/common/meme-logo.png' alt='logo' layout='fill' />
-          </Link>
-        </div>
+    <>
+      {md ? (
+        <HeaderAntd className='app-header'>
+          <Space size={63}>
+            <div className='app-header-logo'>
+              <Link href='/'>
+                <Image src='/common/meme-logo.png' alt='logo' layout='fill' />
+              </Link>
+            </div>
 
-        <div className='app-header-menu'>
-          {navbarItems.map((item, index: number) => (
-            <Link key={index} href={item.href} className={classNames({ activeUrl: pathname === item.href })}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </Space>
+            <div className='app-header-menu'>
+              {navbarItems.map((item, index: number) => (
+                <Link key={index} href={item.href} className={classNames({ activeUrl: pathname === item.href })}>
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </Space>
 
-      <Button className='btn-buy-now'>Buy Now</Button>
-    </HeaderAntd>
+          <Button className='btn-buy-now'>Buy Now</Button>
+        </HeaderAntd>
+      ) : (
+        <AppHeaderMobile />
+      )}
+    </>
   );
 };
 export default Header;

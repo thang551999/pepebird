@@ -11,10 +11,25 @@
   position: relative;
   z-index: 1;
 
+  @media screen and (max-width: 768px) {
+    margin-top: 32px;
+    flex-flow: column nowrap;
+  }
+
   &__image {
     width: 370px;
     height: 421px;
-    position: relative;
+    position: sticky;
+    top: 0;
+
+    @media screen and (max-width: 768px) {
+      position: relative;
+
+      width: 221px;
+      height: 250px;
+
+      margin: 0 auto;
+    }
   }
 
   &__description {
@@ -24,6 +39,11 @@
 
     max-width: 770px;
     width: 100%;
+
+    @media screen and (max-width: 768px) {
+      max-width: unset;
+      gap: 36px 0;
+    }
 
     h2 {
       margin: unset;
@@ -37,6 +57,16 @@
       text-transform: uppercase;
 
       color: #ffffff;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-top: 24px;
+
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+      }
     }
   }
 
@@ -45,6 +75,11 @@
     flex-direction: column;
     gap: 55px 0;
     margin-left: 50px;
+
+    @media screen and (max-width: 768px) {
+      margin-left: unset;
+      gap: 47px 0;
+    }
 
     .htb-item {
       max-width: 743px;
@@ -56,12 +91,21 @@
       justify-content: space-between;
       gap: 0 32px;
 
+      @media screen and (max-width: 768px) {
+        padding: 107px 16px 35px;
+        height: 100%;
+      }
+
       .text {
         max-width: 500px;
         width: 100%;
         margin-left: auto;
         margin-right: 20px;
         z-index: 1;
+
+        @media screen and (max-width: 768px) {
+          margin: unset;
+        }
       }
 
       h2 {
@@ -73,6 +117,12 @@
         font-size: 32px;
         line-height: 78px;
         color: #ffffff;
+
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: 700;
+        }
       }
 
       p {
@@ -93,6 +143,11 @@
 
         top: -33px;
         left: -25px;
+
+        @media screen and (max-width: 768px) {
+          width: 156px;
+          height: 132px;
+        }
       }
 
       .background {
@@ -108,6 +163,12 @@
         transform: skew(20deg);
         left: 20px;
         // background: #ffffff url('/homepage/background_meme.png') no-repeat center center;
+
+        @media screen and (max-width: 768px) {
+          transform: unset;
+          left: 0;
+          top: 0;
+        }
       }
     }
   }

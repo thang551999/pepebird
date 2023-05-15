@@ -1,6 +1,7 @@
 .about-wrapper {
   margin-top: 120px;
   position: relative;
+  z-index: 1;
 
   .container {
     max-width: 1170px;
@@ -11,6 +12,10 @@
 
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      flex-flow: column nowrap;
+    }
   }
 
   &__image {
@@ -18,12 +23,21 @@
     height: 453px;
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      width: 335px;
+      height: 320px;
+    }
   }
 
   &__description {
     max-width: 570px;
     width: 100%;
     z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
 
     h2 {
       margin: 0;
@@ -36,6 +50,11 @@
       text-transform: uppercase;
 
       color: #ffffff;
+
+      @media screen and (max-width: 768px) {
+        font-size: 32px;
+        line-height: 48px;
+      }
     }
 
     p {
@@ -44,14 +63,5 @@
       line-height: 32px;
       color: #ffffff;
     }
-  }
-
-  .union-background {
-    width: 1278px;
-    height: 1009px;
-    position: absolute;
-
-    right: 0;
-    top: 0;
   }
 }

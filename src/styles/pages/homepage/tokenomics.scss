@@ -2,6 +2,10 @@
   margin-top: 120px;
   position: relative;
 
+  @media screen and (max-width: 768px) {
+    margin-top: 32px;
+  }
+
   .container {
     max-width: 1170px;
     width: 100%;
@@ -15,11 +19,14 @@
     font-weight: 700;
     font-size: 64px;
     line-height: 78px;
-
     text-align: center;
     text-transform: uppercase;
-
     color: #ffffff;
+
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 48px;
+    }
   }
 
   &__supply {
@@ -48,8 +55,23 @@
     position: relative;
     z-index: 1;
 
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      margin: unset;
+      margin-top: 25px;
+      margin-bottom: -20px;
+      font-size: 20px;
+      line-height: 30px;
+      white-space: nowrap;
+    }
+
     h3 {
       text-align: center;
+
+      @media screen and (max-width: 768px) {
+        white-space: nowrap;
+      }
     }
   }
 
@@ -63,11 +85,23 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+      flex-flow: column;
+      padding: unset;
+      border-radius: 24px;
+    }
+
     .image {
       width: 440px;
       height: 518px;
       position: relative;
       z-index: 1;
+
+      @media screen and (max-width: 768px) {
+        width: 350px;
+        height: 470px;
+        right: -30px;
+      }
     }
 
     .description {
@@ -80,6 +114,16 @@
 
       background: #0f0d30;
       border-radius: 24px;
+
+      @media screen and (max-width: 768px) {
+        margin: unset;
+        padding: unset;
+
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        margin: 7px;
+      }
 
       li {
         margin-left: 30px;

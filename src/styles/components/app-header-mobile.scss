@@ -1,0 +1,33 @@
+.app-header-mobile {
+  position: relative;
+  z-index: 1;
+
+  padding: 20px 30px;
+  height: 100px;
+  background: unset;
+
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+
+  backdrop-filter: blur(8px);
+
+  .ant-space {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+  }
+
+  .burger-icon {
+    cursor: pointer;
+  }
+}

@@ -15,7 +15,7 @@ const AppFooter: FC = () => {
         <Image src='/common/meme-logo.png' alt='logo' layout='fill' />
       </div>
 
-      <p>© 2023 Copyright HomeScribe AI all rights reserved.</p>
+      <p>© 2023 Copyright Blue Bird Pepe all rights reserved.</p>
     </FooterAntd>
   );
 };
