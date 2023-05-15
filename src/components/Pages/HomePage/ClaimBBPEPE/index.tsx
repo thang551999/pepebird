@@ -54,15 +54,15 @@ const ClaimBBPEPESection = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window.ethereum !== 'undefined') {
-      setInstalledMetamask(true);
-    }
+    // if (typeof window.ethereum !== 'undefined') {
+    //   setInstalledMetamask(true);
+    // }
   }, []);
 
   const connectWallet = async () => {
-    if (screens?.xs && !window.ethereum) {
-      router.push('https://metamask.app.link/dapp/land.futurecity.me/');
-    } else {
+    // if (screens?.xs && !window.ethereum) {
+    //   router.push('https://metamask.app.link/dapp/land.futurecity.me/');
+    // } else {
       const callback = () => {
       //  dispatch(setConnectingMetamask(false));
       };
@@ -72,7 +72,7 @@ const ClaimBBPEPESection = () => {
         connectInjected(callback);
       } else {
        // dispatch(setShowInstallMetamask(true));
-      }
+   //   }
     }
   };
 

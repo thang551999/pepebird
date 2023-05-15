@@ -32,9 +32,8 @@ const HeaderMobile = ({ toggleDrawer, openHeader }: HeaderMobileInterface) => (
       </Link>
     </div>
 
-    
-    {!openHeader&&<BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
-    {openHeader&& <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {!openHeader && <BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {openHeader && <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
   </Space>
 );
 
@@ -47,7 +46,7 @@ const AppHeaderMobile: FC = () => {
 
   return (
     <Header className='app-header-mobile'>
-      <HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader}/>
+      <HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />
 
       <Drawer
         title={<HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />}
@@ -79,7 +78,13 @@ const AppHeaderMobile: FC = () => {
             <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
               <TwitterIcon />
             </a>
-            <BNBIcon />
+            <a
+              target='_blank'
+              href='https://bscscan.com/token/0xfd4ab54d759dc3481d117b5c87f47018137e60ce'
+              rel='noopener noreferrer'
+            >
+              <BNBIcon />
+            </a>
           </Space>
           <div style={{ display: 'flex', justifyContent: 'center', padding: 20 }}>
             <div style={{ textAlign: 'center' }} className='app-footer__logo'>

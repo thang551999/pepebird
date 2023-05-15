@@ -19,7 +19,9 @@ const HomePageBanner = () => {
           <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
             <TwitterIcon />
           </a>
+          <a target='_blank' href='https://bscscan.com/token/0xfd4ab54d759dc3481d117b5c87f47018137e60ce' rel='noopener noreferrer'>
           <BNBIcon />
+          </a>
         </Space>
 
         <Button className='btn-buy-now'>Buy Now</Button>
