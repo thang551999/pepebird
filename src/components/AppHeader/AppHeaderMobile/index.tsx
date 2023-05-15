@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import AppFooter from 'components/AppFooter';
 
 import BurgerIcon from 'resources/svg/Header/BurgerIcon';
+import CloseBurgerIcon from 'resources/svg/Header/CloseBurgerIcon';
 import BNBIcon from 'resources/svg/Homepage/BNBIcon';
 import TelegramIcon from 'resources/svg/Homepage/TelegramIcon';
 import TwitterIcon from 'resources/svg/Homepage/TwitterIcon';
