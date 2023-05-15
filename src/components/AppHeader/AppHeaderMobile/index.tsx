@@ -19,11 +19,12 @@ import { navbarItems } from '..';
 interface HeaderMobileInterface {
   toggleDrawer: () => void;
   showCloseIcon?: boolean;
+  openHeader: boolean;
 }
 
 const { Header } = Layout;
 
-const HeaderMobile = ({ toggleDrawer }: HeaderMobileInterface) => (
+const HeaderMobile = ({ toggleDrawer, openHeader }: HeaderMobileInterface) => (
   <Space>
     <div className='app-header-mobile__logo'>
       <Link href='/'>
@@ -31,7 +32,9 @@ const HeaderMobile = ({ toggleDrawer }: HeaderMobileInterface) => (
       </Link>
     </div>
 
-    <BurgerIcon className='burger-icon' onClick={toggleDrawer} />
+    
+    {!openHeader&&<BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {openHeader&& <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
   </Space>
 );
 
@@ -44,10 +47,10 @@ const AppHeaderMobile: FC = () => {
 
   return (
     <Header className='app-header-mobile'>
-      <HeaderMobile toggleDrawer={toggleDrawer} />
+      <HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader}/>
 
       <Drawer
-        title={<HeaderMobile toggleDrawer={toggleDrawer} />}
+        title={<HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />}
         placement='right'
         onClose={toggleDrawer}
         closable={false}
