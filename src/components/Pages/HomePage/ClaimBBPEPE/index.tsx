@@ -42,6 +42,7 @@ const renderCountdown = ({ days, hours, minutes, seconds, completed }: any) => {
 const ClaimBBPEPESection = () => {
   const total = 8413;
   const [pre, setPre] = useState(0);
+  const [numberAddressSmc, setNumberAddressSmc]=useState(0)
 
   const getPre = async () => {
     const httpProvider = new ethers.providers.JsonRpcProvider(
@@ -50,6 +51,7 @@ const ClaimBBPEPESection = () => {
 
     const contract = new Contract(CONTRACT_ADDRESS, PepeBirdABI, httpProvider);
     const numberAddress = await contract.numberAddress();
+    setNumberAddressSmc(numberAddress)
     setPre(numberAddress.toNumber() / 8413);
   };
 
@@ -71,7 +73,7 @@ const ClaimBBPEPESection = () => {
         launched.
       </p>
       <div className='claim-wrapper__total'>
-        <p>Register</p>
+        <p>{numberAddressSmc} wallet</p>
         <p>{total} wallet</p>
       </div>
 
