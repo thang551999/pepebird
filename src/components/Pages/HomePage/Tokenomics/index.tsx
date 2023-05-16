@@ -22,7 +22,7 @@ const TokenomicsSection = () => {
 
         <div className='tokenomics-wrapper__description'>
           <div className='image'>
-            <Image alt='how-to-buy' src='/homepage/tokenomics.png' layout='fill' />
+            <Image alt='how-to-buy' src='/homepage/tokenomics-image.png' layout='fill' />
           </div>
 
           <ul className='description'>
