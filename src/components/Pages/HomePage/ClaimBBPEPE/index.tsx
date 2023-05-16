@@ -51,7 +51,7 @@ const ClaimBBPEPESection = () => {
 
     const contract = new Contract(CONTRACT_ADDRESS, PepeBirdABI, httpProvider);
     const numberAddress = await contract.numberAddress();
-    setNumberAddressSmc(numberAddress)
+    setNumberAddressSmc(numberAddress.toNumber())
     setPre(numberAddress.toNumber() / 8413);
   };
 
