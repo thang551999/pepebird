@@ -8,18 +8,18 @@ import ConnectWalletButton from 'components/ConnectWalletButton';
 import { CONTRACT_ADDRESS } from 'connectors/constants';
 
 import PepeBirdABI from '../../../../abi/PepeBirdABI.json';
-const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
+const deadline = 1684851330487;
 
 const Completionist = () => <span>You are good to go!</span>;
 
-const renderCountdown = ({ day, hours, minutes, seconds, completed }: any) => {
+const renderCountdown = ({ days, hours, minutes, seconds, completed }: any) => {
   if (completed) {
     return <Completionist />;
   } else {
     return (
       <div className='countdown-wrapper'>
         <Space>
-          {day || 0}
+          {days || 0}
           <p>Days</p>
         </Space>
         <Space>
