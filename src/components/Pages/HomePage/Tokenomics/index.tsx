@@ -4,10 +4,9 @@ import Image from 'next/legacy/image';
 const tokennomicsText = [
   'No tax.',
   'Renounced contract.',
-  '1% for Airdrop',
-  'The liquidity pool received 92.1% of the tokens.',
-  'The remaining 6.9% of the supply is stored in a multi-sig wallet, exclusively for use as tokens in upcoming centralized exchange listings,marketing expenses,etc.',
-  'This wallet can be easily monitored through the ENS name "bluebirdpepewallet.bsc"',
+  '2% for Airdrop',
+  'The liquidity pool received 91.1% of the tokens.',
+  'The remaining 6.9% of the supply is locked into contract, exclusively used as tokens for CEX listings, marketing expenses, team development, etc.',
 ];
 
 const TokenomicsSection = () => {

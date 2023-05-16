@@ -51,7 +51,7 @@ const AppSeo: FC<AppSeoProps> = ({ title, metaDescription, socialImageUrl, favic
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: faviconImageUrl || '/favicon.ico',
+          href: faviconImageUrl || '/logo.png',
         },
         ...(additionalLinkTags && additionalLinkTags?.length > 0 ? additionalLinkTags : []),
       ]}
