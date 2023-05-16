@@ -1,6 +1,6 @@
 import connector from 'utils/connector';
 
-export const CONTRACT_ADDRESS='0xf1f027e16c695A9Ac846c803D4CAD53387Fc0A0A'
+export const CONTRACT_ADDRESS = '0xf1f027e16c695A9Ac846c803D4CAD53387Fc0A0A'
 
 export enum SupportedChainId {
   BSC = 97,
@@ -10,7 +10,7 @@ export enum SupportedChainId {
   POLYGON = 80001,
   POLYGON_MAINNET = 137,
 }
-export const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.BSC];
+export const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.BSC_MAINNET];
 
 export const LIST_BSC_TESTNET = [
   'https://data-seed-prebsc-1-s1.binance.org:8545/',
@@ -52,6 +52,7 @@ export const WALLET_TYPES = {
 
 export const BSCMainnetChainId = '0x38';
 export const BSCMainnetChainIdDec = 56;
+
 export const BSCTestnetChainId = '0x61';
 export const BSCTestnetChainIdDec = 97;
 
@@ -75,6 +76,7 @@ export const CHAIN_INFO = {
     explorerName: 'BSCscan',
     suffixKey: '',
   },
+
   BSC_TESTNET: {
     name: 'Binance Smart Chain Testnet',
     value: BSCTestnetChainIdDec,
@@ -86,6 +88,7 @@ export const CHAIN_INFO = {
     explorerName: 'BSCscan',
     suffixKey: '',
   },
+
   ETHER: {
     name: 'Ethereum',
     value: EtherMainnetChainIdDec,
@@ -134,6 +137,7 @@ export const CHAIN_INFO = {
 
 export const ETH_CHAIN_ID = CHAIN_INFO.ETHER.value;
 export const BSC_CHAIN_ID = CHAIN_INFO.BSC.value;
+
 export const POLYGON_CHAIN_ID = CHAIN_INFO.POLYGON.value;
 export const ETH_CHAIN_ID_TESTNET = CHAIN_INFO.ETHER_TESTNET.value;
 export const BSC_CHAIN_ID_TESTNET = CHAIN_INFO.BSC_TESTNET.value;
@@ -153,6 +157,7 @@ export const APP_NETWORKS_SUPPORT = {
       blockExplorerUrls: [CHAIN_INFO.ETHER.url],
     },
   },
+
   [BSC_CHAIN_ID]: {
     details: {
       chainId: `0x${(+BSC_CHAIN_ID).toString(16)}`,
@@ -189,10 +194,11 @@ export const APP_NETWORKS_SUPPORT = {
         symbol: 'ETH',
         decimals: 18,
       },
-      rpcUrls: [LIST_NETWORK_RPC_TESTNET[ETH_CHAIN_ID_TESTNET]],
+      rpcUrls: [LIST_NETWORK_RPC_MAINNET[ETH_CHAIN_ID_TESTNET]],
       blockExplorerUrls: [CHAIN_INFO.ETHER_TESTNET.url],
     },
   },
+
   [BSC_CHAIN_ID_TESTNET]: {
     details: {
       chainId: `0x${(+BSC_CHAIN_ID_TESTNET).toString(16)}`,
@@ -202,10 +208,11 @@ export const APP_NETWORKS_SUPPORT = {
         symbol: 'BNB',
         decimals: 18,
       },
-      rpcUrls: [LIST_NETWORK_RPC_TESTNET[BSC_CHAIN_ID_TESTNET]],
+      rpcUrls: [LIST_NETWORK_RPC_MAINNET[BSC_CHAIN_ID_TESTNET]],
       blockExplorerUrls: [CHAIN_INFO.BSC_TESTNET.url],
     },
   },
+
   [POLYGON_CHAIN_ID_TESTNET]: {
     details: {
       chainId: `0x${(+POLYGON_CHAIN_ID_TESTNET).toString(16)}`,
@@ -215,7 +222,7 @@ export const APP_NETWORKS_SUPPORT = {
         symbol: 'MATIC',
         decimals: 18,
       },
-      rpcUrls: [LIST_NETWORK_RPC_TESTNET[POLYGON_CHAIN_ID_TESTNET]],
+      rpcUrls: [LIST_NETWORK_RPC_MAINNET[POLYGON_CHAIN_ID_TESTNET]],
       blockExplorerUrls: [CHAIN_INFO.POLYGON_TESTNET.url],
     },
   },

@@ -18,6 +18,7 @@ import showMessage from 'components/Message';
 import {
   BRIDGE_WALLET_CONNECT_URL,
   LIST_BSC_TESTNET,
+  LIST_NETWORK_RPC_MAINNET,
   LIST_NETWORK_RPC_TESTNET,
   METAMASK_DEEPLINK,
   SupportedChainId,
@@ -39,7 +40,7 @@ bscConnector.handleChainChanged = (chainId: string) => {
 };
 
 export const walletConnect = new WalletConnectConnector({
-  rpc: LIST_NETWORK_RPC_TESTNET,
+  rpc: LIST_NETWORK_RPC_MAINNET,
   bridge: BRIDGE_WALLET_CONNECT_URL,
   qrcode: true,
   // pollingInterval: 10000,
