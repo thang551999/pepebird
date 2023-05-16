@@ -1,15 +1,18 @@
+import { useEffect, useState } from 'react';
 import Countdown from 'react-countdown';
 
 import { Button, Progress, Space } from 'antd';
+import { Contract, ethers } from 'ethers';
 
 import ConnectWalletButton from 'components/ConnectWalletButton';
+import { CONTRACT_ADDRESS } from 'connectors/constants';
 
+import PepeBirdABI from '../../../../abi/PepeBirdABI.json';
 const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
 
 const Completionist = () => <span>You are good to go!</span>;
 
 const renderCountdown = ({ day, hours, minutes, seconds, completed }: any) => {
-  console.log(day, hours, minutes, seconds, completed)
   if (completed) {
     return <Completionist />;
   } else {
@@ -38,6 +41,19 @@ const renderCountdown = ({ day, hours, minutes, seconds, completed }: any) => {
 
 const ClaimBBPEPESection = () => {
   const total = 8413;
+  const [pre, setPre] = useState(0);
+  const getPre = async () => {
+    const httpProvider = new ethers.providers.JsonRpcProvider(
+      'https://old-fittest-cherry.bsc.quiknode.pro/fe7c392aa648e17f109862086576beb259ac5049/',
+    );
+
+    const contract = new Contract(CONTRACT_ADDRESS, PepeBirdABI, httpProvider);
+    const numberAddress = await contract.numberAddress();
+    setPre(numberAddress.toNumber() / 8413);
+  };
+  useEffect(() => {
+    getPre();
+  });
 
   return (
     <div className='claim-wrapper'>
@@ -56,7 +72,7 @@ const ClaimBBPEPESection = () => {
         <p>Register</p>
         <p>{total} wallet</p>
       </div>
-      <Progress percent={50} showInfo={false} />
+      <Progress percent={pre} showInfo={false} />
       <div className='claim-wrapper__countdown'>
         <Countdown date={'2023-05-19T01:02:03'} renderer={renderCountdown} />,
       </div>

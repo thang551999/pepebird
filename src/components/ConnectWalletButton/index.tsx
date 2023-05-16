@@ -12,7 +12,7 @@ const ConnectWalletButton = ({ text, className }: ConnectWalletButtonProps) => {
   const { handleSetConnectModal } = useConnectionActions();
   const { library, chainId, account, active, deactivate, activate } = useWeb3React();
   console.log({ library, chainId, account, active, deactivate, activate });
-  const NFTContractAddress = '0x094De877F7e51Ee52Fa7D34B37FDb193e7c07158';
+  const NFTContractAddress = '0xEb57CC2f614e5FbD418803b555FfC3746270D326';
   const handleConnect = async () => {
     console.log(17777, account);
     if (!account) {
@@ -23,7 +23,7 @@ const ConnectWalletButton = ({ text, className }: ConnectWalletButtonProps) => {
       console.log(account);
       const isCheck = await contract.getCheckAdress(account);
       console.log(isCheck);
-      if (!isCheck) {
+      if (isCheck) {
         const a = await contract.register();
         console.log(a);
       }
