@@ -73,19 +73,19 @@ const AppConnectWalletWrapper: FC<{
   }, [address, account]);
 
   const handleLoginForFirstTime = async (wallet: MetamaskService) => {
-    const signature = (await wallet.verifyLoginSignature({
-      creator: account as string,
-      library,
-      cancelMetamask: () => {
-        handleDisconnect();
-        handleCancelLoadingMetamask();
-      },
-    })) as string;
+    // const signature = (await wallet.verifyLoginSignature({
+    //   creator: account as string,
+    //   library,
+    //   cancelMetamask: () => {
+    //     handleDisconnect();
+    //     handleCancelLoadingMetamask();
+    //   },
+    // })) as string;
 
-    if (signature) {
-      handleAddAddressNetWork({ address: account, signature });
+    if (wallet) {
+      handleAddAddressNetWork({ address: account });
       handleSetAddressNetwork({ chainId, address: account });
-      console.log('signature', signature);
+      // console.log('signature', signature);
       console.log('account', account);
     } else {
       handleDisconnect();
