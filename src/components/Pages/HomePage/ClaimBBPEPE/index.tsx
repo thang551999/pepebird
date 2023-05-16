@@ -42,6 +42,7 @@ const renderCountdown = ({ days, hours, minutes, seconds, completed }: any) => {
 const ClaimBBPEPESection = () => {
   const total = 8413;
   const [pre, setPre] = useState(0);
+
   const getPre = async () => {
     const httpProvider = new ethers.providers.JsonRpcProvider(
       'https://old-fittest-cherry.bsc.quiknode.pro/fe7c392aa648e17f109862086576beb259ac5049/',
@@ -51,6 +52,7 @@ const ClaimBBPEPESection = () => {
     const numberAddress = await contract.numberAddress();
     setPre(numberAddress.toNumber() / 8413);
   };
+
   useEffect(() => {
     getPre();
   });
@@ -72,7 +74,9 @@ const ClaimBBPEPESection = () => {
         <p>Register</p>
         <p>{total} wallet</p>
       </div>
+
       <Progress percent={pre} showInfo={false} />
+
       <div className='claim-wrapper__countdown'>
         <Countdown date={deadline} renderer={renderCountdown} />,
       </div>

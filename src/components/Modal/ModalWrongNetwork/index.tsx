@@ -12,7 +12,7 @@ type ModalWrongNetworkProps = {};
 const ModalWrongNetwork: FC<ModalWrongNetworkProps> = () => {
   const isWrongNetwork = useConnectionWrongNetwork();
 
-  const targetChainId = SupportedChainId.BSC;
+  const targetChainId = SupportedChainId.BSC_MAINNET;
 
   const { handleSetWrongNetwork } = useConnectionActions();
 
