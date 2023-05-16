@@ -3,8 +3,8 @@ import connector from 'utils/connector';
 export const CONTRACT_ADDRESS='0xf1f027e16c695A9Ac846c803D4CAD53387Fc0A0A'
 
 export enum SupportedChainId {
-  BSC = 56,
-  BSC_MAINNET = 97,
+  BSC = 97,
+  BSC_MAINNET = 56,
   ETH = 4,
   ETH_MAINNET = 1,
   POLYGON = 80001,
