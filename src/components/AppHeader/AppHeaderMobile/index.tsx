@@ -31,8 +31,8 @@ const HeaderMobile = ({ toggleDrawer, openHeader }: HeaderMobileInterface) => (
         <Image src='/common/meme-logo.png' alt='logo' layout='fill' />
       </Link>
     </div>
-    {openHeader && <BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
-    {!openHeader && <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {!openHeader && <BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {openHeader && <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
   </Space>
 );
 
