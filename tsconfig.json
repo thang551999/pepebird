@@ -33,6 +33,14 @@
     "ignoreDeprecations": "5.0"
     // "importsNotUsedAsValues": "error"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-i18next.config.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-i18next.config.js",
+    "src/services/api.tss"
+  ],
   "exclude": ["node_modules"]
 }

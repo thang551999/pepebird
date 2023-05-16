@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 
 import { useWeb3React } from '@web3-react/core';
-import { handleSetConnectedWalletType } from 'redux/address/slice';
-import selectedConnection from 'redux/connection/selector';
-import { handleSetConnectModal, handleSetLoadingMetamask, handleSetWrongNetwork } from 'redux/connection/slice';
 
 import AppButton from 'components/AppButton';
 import { getErrorConnectMessage } from 'connectors';
 import { METAMASK, METAMASK_DEEPLINK, WALLET_CONNECT } from 'connectors/constants';
 import { useConnectWallet } from 'hooks/useConnectWallet';
-import { useAppDispatch, useAppSelector } from 'hooks/useStore';
+import { useAddressActions } from 'store/address/selector';
+import {
+  useConnectionActions,
+  useConnectionConnectingWallet,
+  useConnectionShowConnectModal,
+} from 'store/connection/selector';
 
 import MetamaskIcon from 'resources/svg/MetamaskIcon';
 
@@ -18,16 +20,21 @@ import Modal from '..';
 declare let window: any;
 
 const ModalConnectWallet = () => {
-  const dispatch = useAppDispatch();
   const { active, deactivate, account } = useWeb3React();
 
-  const { isShowConnectModal, isConnectingWallet } = useAppSelector(selectedConnection.getConnection);
+  // const { isShowConnectModal, isConnectingWallet } = useAppSelector(selectedConnection.getConnection);
 
-  const handleHideModalConnectWallet = () => dispatch(handleSetConnectModal(false));
+  const isShowConnectModal = useConnectionShowConnectModal();
+  const isConnectingWallet = useConnectionConnectingWallet();
+
+  const { handleSetConnectModal, handleSetLoadingMetamask, handleSetWrongNetwork } = useConnectionActions();
+  const { handleSetConnectedWalletType } = useAddressActions();
+
+  const handleHideModalConnectWallet = () => handleSetConnectModal(false);
 
   const handleCloseModalConnectWallet = () => {
     handleHideModalConnectWallet();
-    dispatch(handleSetLoadingMetamask(false));
+    handleSetConnectModal(false);
   };
 
   const [connectedWalletType, setConnectedWalletType] = useState('');
@@ -38,7 +45,7 @@ const ModalConnectWallet = () => {
 
   useEffect(() => {
     if (active && account && connectedWalletType) {
-      dispatch(handleSetConnectedWalletType(connectedWalletType));
+      handleSetConnectedWalletType(connectedWalletType);
     }
   }, [connectedWalletType, active, account]);
 
@@ -48,10 +55,10 @@ const ModalConnectWallet = () => {
     connectInjected(
       undefined,
       () => {
-        dispatch(handleSetLoadingMetamask(true));
+        handleSetLoadingMetamask(true);
         setConnectedWalletType(METAMASK);
       },
-      () => isEthereum && dispatch(handleSetLoadingMetamask(false)),
+      () => isEthereum && handleSetLoadingMetamask(false),
     );
   };
 
@@ -60,9 +67,9 @@ const ModalConnectWallet = () => {
 
     connectWalletConnect({
       failed: (err) => {
-        dispatch(handleSetLoadingMetamask(false));
+        handleSetLoadingMetamask(false);
         getErrorConnectMessage(err, deactivate);
-        dispatch(handleSetWrongNetwork(true));
+        handleSetWrongNetwork(true);
       },
     });
 

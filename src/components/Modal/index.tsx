@@ -1,8 +1,6 @@
-import React, { FC, Fragment, ReactNode } from 'react';
+import { FC, Fragment, ReactNode } from 'react';
 
 import { Modal as ModalAntd, Typography } from 'antd';
-
-import { useAppSelector } from 'hooks/useStore';
 
 const { Title } = Typography;
 

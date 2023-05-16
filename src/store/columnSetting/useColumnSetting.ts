@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { create } from 'zustand';
+import create from 'zustand';
 import { persist } from 'zustand/middleware';
-import { immer } from 'zustand/middleware/immer';
 
 interface ColumnSetting {
   columnSetting: Record<string, Record<string, string[]>>;
@@ -16,28 +15,27 @@ const initialState = {
   columnSetting: {},
 
   actions: {
-    setColumnSetting: () => {},
+    setColumnSetting: () => { },
   },
 };
 
 export const usePersistedColumnSettingStore = create<ColumnSetting & { actions: ColumnSettingAction }>()(
-  persist(
-    immer((set) => ({
-      ...initialState,
+  persist((set) => ({
+    ...initialState,
 
-      actions: {
-        ...initialState.actions,
-        setColumnSetting: ({ key, setting, address }) =>
-          set((state) => {
-            if (address) {
-              if (!state.columnSetting[address]) {
-                state.columnSetting[address] = {};
-              }
-              state.columnSetting[address][key] = [...setting];
+    actions: {
+      ...initialState.actions,
+      setColumnSetting: ({ key, setting, address }) =>
+        set((state): any => {
+          if (address) {
+            if (!state.columnSetting[address]) {
+              state.columnSetting[address] = {};
             }
-          }),
-      },
-    })),
+            state.columnSetting[address][key] = [...setting];
+          }
+        }),
+    },
+  }),
     {
       name: 'ColumnSetting',
       partialize: ({ columnSetting }) => ({ columnSetting }),

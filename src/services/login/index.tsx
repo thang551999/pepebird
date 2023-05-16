@@ -1,8 +1,8 @@
-import { api } from 'services/api';
+import ApiService from 'services/apiService';
 
-class LoginServices {
+class LoginServices extends ApiService {
   handleLogin = (data: { signature: string; address: string }) => {
-    return api.post('auth/login', data);
+    return this.post('auth/login', data);
   };
 }
 

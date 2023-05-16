@@ -1,10 +1,5 @@
 import Image from 'next/legacy/image';
 
-import { Button } from 'antd';
-import selectedAddress from 'redux/address/selector';
-
-import { useAppDispatch, useAppSelector } from 'hooks/useStore';
-
 import AboutSection from './About';
 import HomePageBanner from './Banner';
 import BlueBirdQuoteSection from './BlueBirdQuote';
