@@ -41,9 +41,6 @@ export default class BaseWalletService {
     this.address = props?.address;
   }
 
-
-
-
   verifyLoginSignature = async ({
     library,
     creator,
@@ -75,51 +72,6 @@ export default class BaseWalletService {
       } else {
         return;
       }
-    }
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  verifyCreateCollection = async ({
-    library,
-    creator,
-    onSuccess,
-    onError,
-  }: {
-    library: any;
-    creator: string;
-    cancelMetamask?: () => void;
-    onSuccess?: (signature: string) => void;
-    onError?: () => void;
-  }) => {
-    let signVerify: any = null;
-    let hashVerify = null;
-
-    try {
-      hashVerify = ethers.utils.solidityKeccak256(['address'], [creator]);
-      const signHashBytes = ethers.utils.arrayify(hashVerify);
-      if (library?.provider?.wc) {
-        const wcMessage = ethers.utils.hexlify(signHashBytes);
-        signVerify = await library.provider.wc.signPersonalMessage([wcMessage, creator]);
-      } else {
-        const signer = await library.getSigner(creator);
-        signVerify = await signer.signMessage(signHashBytes);
-      }
-      return signVerify;
-    } catch (error: any) {
-      console.log('error', error);
-      onError && onError();
     }
   };
 }

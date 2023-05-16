@@ -7,11 +7,7 @@ import { getErrorConnectMessage } from 'connectors';
 import { METAMASK, METAMASK_DEEPLINK, WALLET_CONNECT } from 'connectors/constants';
 import { useConnectWallet } from 'hooks/useConnectWallet';
 import { useAddressActions } from 'store/address/selector';
-import {
-  useConnectionActions,
-  useConnectionConnectingWallet,
-  useConnectionShowConnectModal,
-} from 'store/connection/selector';
+import { useConnectionActions, useConnectionShowConnectModal } from 'store/connection/selector';
 
 import MetamaskIcon from 'resources/svg/MetamaskIcon';
 
@@ -22,10 +18,7 @@ declare let window: any;
 const ModalConnectWallet = () => {
   const { active, deactivate, account } = useWeb3React();
 
-  // const { isShowConnectModal, isConnectingWallet } = useAppSelector(selectedConnection.getConnection);
-
   const isShowConnectModal = useConnectionShowConnectModal();
-  const isConnectingWallet = useConnectionConnectingWallet();
 
   const { handleSetConnectModal, handleSetLoadingMetamask, handleSetWrongNetwork } = useConnectionActions();
   const { handleSetConnectedWalletType } = useAddressActions();
