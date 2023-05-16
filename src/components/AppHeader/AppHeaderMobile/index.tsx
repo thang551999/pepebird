@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import AppFooter from 'components/AppFooter';
 
 import BurgerIcon from 'resources/svg/Header/BurgerIcon';
+import CloseBurgerIcon from 'resources/svg/Header/CloseBurgerIcon';
 import BNBIcon from 'resources/svg/Homepage/BNBIcon';
 import TelegramIcon from 'resources/svg/Homepage/TelegramIcon';
 import TwitterIcon from 'resources/svg/Homepage/TwitterIcon';
@@ -18,19 +19,20 @@ import { navbarItems } from '..';
 interface HeaderMobileInterface {
   toggleDrawer: () => void;
   showCloseIcon?: boolean;
+  openHeader?: boolean;
 }
 
 const { Header } = Layout;
 
-const HeaderMobile = ({ toggleDrawer }: HeaderMobileInterface) => (
+const HeaderMobile = ({ toggleDrawer, openHeader }: HeaderMobileInterface) => (
   <Space>
     <div className='app-header-mobile__logo'>
       <Link href='/'>
         <Image src='/common/meme-logo.png' alt='logo' layout='fill' />
       </Link>
     </div>
-
-    <BurgerIcon className='burger-icon' onClick={toggleDrawer} />
+    {openHeader && <BurgerIcon className='burger-icon' onClick={toggleDrawer} />}
+    {!openHeader && <CloseBurgerIcon className='burger-icon' onClick={toggleDrawer} />}
   </Space>
 );
 
@@ -43,10 +45,10 @@ const AppHeaderMobile: FC = () => {
 
   return (
     <Header className='app-header-mobile'>
-      <HeaderMobile toggleDrawer={toggleDrawer} />
+      <HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />
 
       <Drawer
-        title={<HeaderMobile toggleDrawer={toggleDrawer} />}
+        title={<HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader}/>}
         placement='right'
         onClose={toggleDrawer}
         closable={false}

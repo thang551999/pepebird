@@ -9,6 +9,7 @@ const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
 const Completionist = () => <span>You are good to go!</span>;
 
 const renderCountdown = ({ day, hours, minutes, seconds, completed }: any) => {
+  console.log(day, hours, minutes, seconds, completed)
   if (completed) {
     return <Completionist />;
   } else {
@@ -44,7 +45,7 @@ const ClaimBBPEPESection = () => {
       <p className='claim-wrapper__data'>
         A total of 8,413,800,000,000 (2% total supply) $BBPEPE tokens are now available to be claimed by holders of
         <br />
-        BNBFLOKIAI - Early Adopters (BFLOKIAI), BlessedGiftBox (BGB),
+        BlessedGiftBox (BGB),
         <br />
         Playbux Early Bird Quest (PBN) , PVU PLANT (PVU PLANT) , AND $POV, $CAPO token holder.
         <br />
@@ -59,7 +60,7 @@ const ClaimBBPEPESection = () => {
       </div>
       <Progress percent={50} showInfo={false} />
       <div className='claim-wrapper__countdown'>
-        <Countdown date={deadline} renderer={renderCountdown} />,
+        <Countdown date={'2023-05-19T01:02:03'} renderer={renderCountdown} />,
       </div>
 
       <ConnectWalletButton className='claim-wrapper__register-btn' text='Connect your wallet to register' />
