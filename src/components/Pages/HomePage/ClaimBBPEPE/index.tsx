@@ -45,9 +45,7 @@ const ClaimBBPEPESection = () => {
       <p className='claim-wrapper__data'>
         A total of 8,413,800,000,000 (2% total supply) $BBPEPE tokens are now available to be claimed by holders of
         <br />
-        BlessedGiftBox (BGB),
-        <br />
-        Playbux Early Bird Quest (PBN) , PVU PLANT (PVU PLANT) , AND $POV, $CAPO token holder.
+        BlessedGiftBox (BGB),Playbux Early Bird Quest (PBN) , PVU PLANT (PVU PLANT) , AND $POV, $CAPO token holder.
         <br />
         $BBPEPE tokens that are not claimed within 7 days will be burned.
         <br /> <br />
