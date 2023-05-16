@@ -44,7 +44,7 @@ const Header: FC = () => {
             </div>
           </Space>
 
-          <Button className='btn-buy-now'>Buy Now</Button>
+          <Button className='btn-buy-now' onClick={()=>window.open('https://pancakeswap.finance/swap?outputCurrency=0xFd4aB54D759Dc3481d117b5C87f47018137e60cE','_blank') }>Buy Now</Button>
         </HeaderAntd>
       ) : (
         <AppHeaderMobile />
