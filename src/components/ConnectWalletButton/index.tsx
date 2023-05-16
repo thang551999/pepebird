@@ -42,7 +42,7 @@ const ConnectWalletButton = ({ text, className }: ConnectWalletButtonProps) => {
 
   return (
     <AppButton
-      text={account ? 'Connect Wallet' : 'Register'}
+      text={account ? 'Register':'Connect Wallet'}
       // disabled={!active}
       onClick={handleConnect}
       className={classNames('connect-wallet__button', className)}
