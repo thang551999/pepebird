@@ -74,7 +74,7 @@ const ClaimBBPEPESection = () => {
       </div>
       <Progress percent={pre} showInfo={false} />
       <div className='claim-wrapper__countdown'>
-        <Countdown date={'2023-05-19T01:02:03'} renderer={renderCountdown} />,
+        <Countdown date={deadline} renderer={renderCountdown} />,
       </div>
 
       <ConnectWalletButton className='claim-wrapper__register-btn' text='Connect your wallet to register' />
