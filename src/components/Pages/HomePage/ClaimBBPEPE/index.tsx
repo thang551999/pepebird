@@ -2,6 +2,8 @@ import Countdown from 'react-countdown';
 
 import { Button, Progress, Space } from 'antd';
 
+import ConnectWalletButton from 'components/ConnectWalletButton';
+
 const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
 
 const Completionist = () => <span>You are good to go!</span>;
@@ -39,7 +41,6 @@ const ClaimBBPEPESection = () => {
   return (
     <div className='claim-wrapper'>
       <Button className='claim-wrapper__button'>You can claim BBPEPE Now!</Button>
-
       <p className='claim-wrapper__data'>
         A total of 8,413,800,000,000 (2% total supply) $BBPEPE tokens are now available to be claimed by holders of
         <br />
@@ -52,19 +53,16 @@ const ClaimBBPEPESection = () => {
         First come first served. 8413 addresses that registered first will be airdrop $BBPEPE tokens 7 days after
         launched.
       </p>
-
       <div className='claim-wrapper__total'>
         <p>Register</p>
         <p>{total} wallet</p>
       </div>
-
       <Progress percent={50} showInfo={false} />
-
       <div className='claim-wrapper__countdown'>
         <Countdown date={deadline} renderer={renderCountdown} />,
       </div>
 
-      <Button className='claim-wrapper__register-btn'>Connect your wallet to register</Button>
+      <ConnectWalletButton className='claim-wrapper__register-btn' text='Connect your wallet to register' />
     </div>
   );
 };

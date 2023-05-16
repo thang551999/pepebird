@@ -7,6 +7,28 @@ import showMessage from 'components/Message';
 
 import axios from './axios';
 
+const HEADERS = {
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+} as any;
+
+const HEADERS_MULTIPLE_PART = {
+  ...HEADERS,
+  'Content-Type': 'multipart/form-data; boundary=something',
+  Accept: 'application/json',
+};
+
+export const getToken = (token: any) => {
+  HEADERS['Authorization'] = `Bearer ${token}`;
+  HEADERS_MULTIPLE_PART['Authorization'] = `Bearer ${token}`;
+};
+
+export const checkSuccessRequest = (response: any) => {
+  return response?.status < HTTP_STATUS_CONSTANTS.ERROR;
+};
+
 class ApiService {
   private HEADERS;
   private EXCLUDED_RESPONSE = ['empty_response'];
@@ -37,7 +59,7 @@ class ApiService {
     return response?.status === HTTP_STATUS_CONSTANTS.ERROR_CODE_401;
   }
 
-  private handleExpiredAuthorization(endpoint: string, params: any = {}, options?: any) {}
+  private handleExpiredAuthorization(endpoint: string, params: any = {}, options?: any) { }
 
   private checkErrorStatus(
     response: any,
