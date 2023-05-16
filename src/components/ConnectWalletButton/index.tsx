@@ -8,9 +8,9 @@ import { useConnectionActions } from 'store/connection/selector';
 
 import PepeBirdABI from '../../abi/PepeBirdABI.json';
 import AppButton from '../AppButton';
-type ConnectWalletButtonProps = { text?: string; className?: string };
+type ConnectWalletButtonProps = { text?: string; className?: string; reload(): void };
 
-const ConnectWalletButton = ({ text, className }: ConnectWalletButtonProps) => {
+const ConnectWalletButton = ({ text, className, reload }: ConnectWalletButtonProps) => {
   const { handleSetConnectModal } = useConnectionActions();
   const { library, chainId, account, active, deactivate, activate } = useWeb3React();
 
@@ -33,6 +33,7 @@ const ConnectWalletButton = ({ text, className }: ConnectWalletButtonProps) => {
 
         if (receipt1) {
           showMessage('success', 'Register successfully');
+          reload()
         } else {
           showMessage('error', 'Register failed');
         }
