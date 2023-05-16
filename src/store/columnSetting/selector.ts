@@ -7,9 +7,9 @@ export const useGetColumnSetting = (
   address: string | undefined,
   defaultValue: string[] | undefined,
 ) =>
-  useColumnSettingStore((state) => {
+  useColumnSettingStore((state: any) => {
     if (!address || !key) return defaultValue;
 
     return get(state, ['columnSetting', address, key]) || defaultValue;
   });
-export const useGetColumnSettingActions = () => usePersistedColumnSettingStore((state) => state.actions);
+export const useGetColumnSettingActions = () => usePersistedColumnSettingStore((state: any) => state.actions);

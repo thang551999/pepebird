@@ -1,9 +1,7 @@
 import { FC, useEffect } from 'react';
 
-import selectedConnection from 'redux/connection/selector';
-
 import { SupportedChainId } from 'connectors/constants';
-import { useAppSelector } from 'hooks/useStore';
+import { useConnectionWrongNetwork } from 'store/connection/selector';
 
 import { setupNetwork } from 'utils/wallet';
 
@@ -12,7 +10,7 @@ import Modal from '..';
 type ModalWrongNetworkProps = {};
 
 const ModalWrongNetwork: FC<ModalWrongNetworkProps> = () => {
-  const { isWrongNetwork } = useAppSelector(selectedConnection.getConnection);
+  const isWrongNetwork = useConnectionWrongNetwork();
 
   const targetChainId = SupportedChainId.BSC;
 
