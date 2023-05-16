@@ -2,16 +2,13 @@ import { FC, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { useWeb3React } from '@web3-react/core';
-import { TYPE_CONSTANTS } from 'constant';
-import noop from 'lodash/noop';
 
-import { injected, walletConnect } from 'connectors';
+import { walletConnect } from 'connectors';
 import { METAMASK, SUPPORTED_CHAIN_IDS, WALLET_CONNECT } from 'connectors/constants';
 import { useConnectWallet } from 'hooks/useConnectWallet';
-import { checkSuccessRequest, getToken } from 'services/apiService';
-import loginServices from 'services/login';
+import { getToken } from 'services/apiService';
 import MetamaskService from 'services/MetamaskService';
-import { useAddress, useAddressActions, useAddressConnectedWalletType } from 'store/address/selector';
+import { useAddress, useAddressActions } from 'store/address/selector';
 import {
   useAuthenticationActions,
   useAuthenticationListAddress,
@@ -21,7 +18,6 @@ import { useConnectionActions, useConnectionConnectingWallet } from 'store/conne
 
 import { setupNetwork } from 'utils/wallet';
 
-import showMessage from '../Message';
 import ModalConnectWallet from '../Modal/ModalConnectWallet';
 import ModalWrongNetwork from '../Modal/ModalWrongNetwork';
 
@@ -36,39 +32,24 @@ const AppConnectWalletWrapper: FC<{
 
   // Authentication
   const listAddress = useAuthenticationListAddress();
+  const { handleSetToken } = useAuthenticationActions();
 
   // Address
   const address = useAddress();
-  const connectedWalletType = useAddressConnectedWalletType();
 
   const authenticationToken = useAuthenticationToken();
 
   const isConnectingWallet = useConnectionConnectingWallet();
 
-  const { handleSetToken } = useAuthenticationActions();
-  const { handleSetAddressNetwork, handleSetConnectedWalletType, handleAddAddressNetWork } = useAddressActions();
-  const { handleSetConnectModal, handleSetLoadingMetamask, handleSetWrongNetwork, handleSetConnected } =
-    useConnectionActions();
-
-  useEffect(() => {
-    if (address && connectedWalletType && !active) {
-      if (connectedWalletType === METAMASK) {
-        setTimeout(() => connectInjected(), 200);
-        handleSetConnectedWalletType(METAMASK);
-      }
-
-      if (connectedWalletType === WALLET_CONNECT) {
-        setTimeout(() => connectWalletConnect(), 200);
-        handleSetConnectedWalletType(WALLET_CONNECT);
-      }
-    }
-  }, [address, connectedWalletType, active, router.query]);
+  const { handleSetAddressNetwork, handleAddAddressNetWork } = useAddressActions();
+  const { handleSetLoadingMetamask, handleSetWrongNetwork, handleSetConnected } = useConnectionActions();
 
   useEffect(() => {
     const setUpAddress = async () => {
-      if (account) {
+      if (account && isConnectingWallet) {
         const wallet = new MetamaskService().getInstance();
         setupNetwork(chainId, library);
+
         if (!listAddress?.[account]) {
           handleLoginForFirstTime(wallet);
         } else {
@@ -76,29 +57,12 @@ const AppConnectWalletWrapper: FC<{
         }
       }
     };
+
     setUpAddress();
   }, [account, isConnectingWallet]);
 
   useEffect(() => {
-    walletConnect.on('Web3ReactDeactivate', () => {
-      localStorage.removeItem(WALLET_CONNECT);
-      walletConnect.walletConnectProvider = undefined;
-      handleDisconnect();
-    });
-
-    injected.on('Web3ReactDeactivate', () => {
-      localStorage.removeItem(METAMASK);
-      handleDisconnect();
-    });
-
-    return () => {
-      walletConnect.removeListener('Web3ReactDeactivate', noop);
-      injected.removeListener('Web3ReactDeactivate', noop);
-    };
-  }, [active, account, address]);
-
-  useEffect(() => {
-    const isWrongNetwork = authenticationToken && chainId && !SUPPORTED_CHAIN_IDS.includes(chainId);
+    const isWrongNetwork = chainId && !SUPPORTED_CHAIN_IDS.includes(chainId);
     if (isWrongNetwork) {
       handleSetWrongNetwork(isWrongNetwork);
     }
@@ -119,64 +83,18 @@ const AppConnectWalletWrapper: FC<{
     })) as string;
 
     if (signature) {
-      handleLogin({
-        address: account as string,
-        signature,
-        success: () => {
-          handleAddAddressNetWork({ address: account, signature }),
-            handleSetAddressNetwork({ chainId, address: account });
-        },
-        fail: handleLoginFailed,
-      });
+      handleAddAddressNetWork({ address: account, signature });
+      handleSetAddressNetwork({ chainId, address: account });
+      console.log('signature', signature);
+      console.log('account', account);
     } else {
       handleDisconnect();
+      handleLoginFailed();
     }
   };
 
   const handleLoginWithExistedAccount = async (account: string) => {
-    handleLogin({
-      address: account as string,
-      signature: listAddress?.[account]?.signature as string,
-      success: () => {
-        handleSetAddressNetwork({
-          chainId,
-          address: account,
-        });
-      },
-      fail: handleLoginFailed,
-    });
-  };
-
-  const handleLogin = async ({
-    address,
-    signature,
-    success,
-    fail,
-  }: {
-    address: string;
-    signature: string;
-    success: () => void;
-    fail: () => void;
-  }) => {
-    const data = {
-      address,
-      signature,
-    };
-    try {
-      const response = await loginServices.handleLogin(data);
-      if (checkSuccessRequest(response)) {
-        const token = response?.data?.token;
-        getToken(token);
-        handleSetToken(token);
-        success();
-      } else {
-        fail();
-      }
-    } catch (error) {
-      console.log('error :>> ', error);
-    } finally {
-      handleCancelLoadingMetamask();
-    }
+    console.log('account', account);
   };
 
   const handleCancelLoadingMetamask = () =>
@@ -197,12 +115,13 @@ const AppConnectWalletWrapper: FC<{
   const handleLoginFailed = async () => {
     try {
       handleDisconnect();
-      showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'message.E3');
+      // showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'message.E3');
     } catch (e) {
       console.log(e);
     } finally {
       handleSetAddressNetwork({ address: '' });
       handleSetToken({ token: '' });
+      handleCancelLoadingMetamask();
       console.log('wallet disconnect');
     }
   };

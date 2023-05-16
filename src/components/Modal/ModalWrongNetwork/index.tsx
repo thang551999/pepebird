@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 
 import { SupportedChainId } from 'connectors/constants';
-import { useConnectionWrongNetwork } from 'store/connection/selector';
+import { useConnectionActions, useConnectionWrongNetwork } from 'store/connection/selector';
 
 import { setupNetwork } from 'utils/wallet';
 
@@ -14,11 +14,14 @@ const ModalWrongNetwork: FC<ModalWrongNetworkProps> = () => {
 
   const targetChainId = SupportedChainId.BSC;
 
+  const { handleSetWrongNetwork } = useConnectionActions();
+
   useEffect(() => {
     if (isWrongNetwork) {
       const switchNetwork = async () => {
         if (targetChainId) {
           await setupNetwork(targetChainId);
+          handleSetWrongNetwork(false);
         }
       };
 
