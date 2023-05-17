@@ -19,16 +19,11 @@ const HomePageBanner = () => {
           <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
             <TwitterIcon />
           </a>
-          <a
-            target='_blank'
-            href='https://bscscan.com/token/0xfd4ab54d759dc3481d117b5c87f47018137e60ce'
-            rel='noopener noreferrer'
-          >
+          
             <BNBIcon />
-          </a>
         </Space>
 
-        <Button className='btn-buy-now' onClick={()=>window.open('https://pancakeswap.finance/swap?outputCurrency=0xFd4aB54D759Dc3481d117b5C87f47018137e60cE','_blank') }>Buy Now</Button>
+        <Button className='btn-buy-now'>Buy Now</Button>
       </div>
 
       <div className='homepage-banner__right'>
