@@ -43,7 +43,7 @@ const ConnectWalletButton = ({ text, className, reload }: ConnectWalletButtonPro
 
   return (
     <AppButton
-      text={account ? 'Register':'Connect Wallet'}
+      text={account ? 'Register':'Coming soon'}
       // disabled={!active}
       // onClick={handleConnect}
       className={classNames('connect-wallet__button', className)}

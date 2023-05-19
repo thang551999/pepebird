@@ -13,30 +13,30 @@ const deadline = 1684851330487;
 const Completionist = () => <span>You are good to go!</span>;
 
 const renderCountdown = ({ days, hours, minutes, seconds, completed }: any) => {
-  if (completed) {
-    return <Completionist />;
-  } else {
+//   if (false) {
+//     return <Completionist />;
+//   } else {
     return (
       <div className='countdown-wrapper'>
         <Space>
-          {days || 0}
+          {7}
           <p>Days</p>
         </Space>
         <Space>
-          {hours || 0}
+          {'00'}
           <p>Hours</p>
         </Space>
         <Space>
-          {minutes || 0}
+          {'00'}
           <p>Minutes</p>
         </Space>
         <Space>
-          {seconds || 0}
+          {'00'}
           <p>Second</p>
         </Space>
       </div>
     );
-  }
+  //}
 };
 
 const ClaimBBPEPESection = () => {
@@ -73,7 +73,7 @@ const ClaimBBPEPESection = () => {
         launched.
       </p>
       <div className='claim-wrapper__total'>
-        <p>{numberAddressSmc} wallets</p>
+        <p>0 wallets</p>
         <p>{total} wallets</p>
       </div>
 
