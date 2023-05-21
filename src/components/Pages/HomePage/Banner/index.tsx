@@ -13,7 +13,7 @@ const HomePageBanner = () => {
       <div className='homepage-banner__left'>
         <h1>Blue Bird PePe</h1>
         <Space size={12}>
-          <a target='_blank' href='https://t.me/bluebirdpepe' rel='noopener noreferrer'>
+          <a target='_blank' href='https://t.me/bluebirdpepeofficial' rel='noopener noreferrer'>
             <TelegramIcon />
           </a>
           <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>

@@ -71,7 +71,7 @@ const AppHeaderMobile: FC = () => {
         </div>
         <div style={{ textAlign: 'center' }}>
           <Space size={12}>
-            <a target='_blank' href='https://t.me/bluebirdpepe' rel='noopener noreferrer'>
+            <a target='_blank' href='https://t.me/bluebirdpepeofficial' rel='noopener noreferrer'>
               <TelegramIcon />
             </a>
             <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
