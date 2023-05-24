@@ -48,7 +48,7 @@ const AppHeaderMobile: FC = () => {
       <HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />
 
       <Drawer
-        title={<HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader}/>}
+        title={<HeaderMobile toggleDrawer={toggleDrawer} openHeader={openHeader} />}
         placement='right'
         onClose={toggleDrawer}
         closable={false}
@@ -77,7 +77,13 @@ const AppHeaderMobile: FC = () => {
             <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
               <TwitterIcon />
             </a>
-            <BNBIcon />
+            <a
+              target='_blank'
+              href='https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283'
+              rel='noopener noreferrer'
+            >
+              <BNBIcon />
+            </a>
           </Space>
           <div style={{ display: 'flex', justifyContent: 'center', padding: 20 }}>
             <div style={{ textAlign: 'center' }} className='app-footer__logo'>
