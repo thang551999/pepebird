@@ -105,12 +105,11 @@
     }
 
     .description {
-      padding: 40px 10px;
+      padding: 20px;
       margin-top: -98px;
       list-style-type: disc;
 
       width: 530px;
-      height: 400px;
 
       background: #0f0d30;
       border-radius: 24px;
@@ -129,9 +128,10 @@
         margin-left: 30px;
 
         font-weight: 400;
-        font-size: 20px;
+        font-size: 24px;
         line-height: 32px;
         color: #ffffff;
+        text-shadow: 0px 4px 54px rgba(0, 0, 0, 0.1);
       }
     }
   }

@@ -2,11 +2,12 @@ import React from 'react';
 import Image from 'next/legacy/image';
 
 const tokennomicsText = [
-  'No tax.',
-  'Renounced contract.',
-  '2% for Airdrop',
-  'The liquidity pool received 91.1% of the tokens.',
-  'The remaining 6.9% of the supply is locked into contract, exclusively used as tokens for CEX listings, marketing expenses, team development, etc.',
+  'No taxes, contract renouncement, and audit',
+  'Airdrop: 2%',
+  'Marketing: 2%',
+  'Ecosystem: 6.9%',
+  'Presale and liquidity: 81.1%',
+  'Burn: 8%',
 ];
 
 const TokenomicsSection = () => {
@@ -22,7 +23,7 @@ const TokenomicsSection = () => {
 
         <div className='tokenomics-wrapper__description'>
           <div className='image'>
-            <Image alt='how-to-buy' src='/homepage/tokenomics-image.png' layout='fill' />
+            <Image alt='how-to-buy' src='/homepage/left.webp' layout='fill' />
           </div>
 
           <ul className='description'>

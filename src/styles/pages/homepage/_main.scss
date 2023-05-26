@@ -6,6 +6,8 @@
 @import './tokenomics.scss';
 @import './roadmap.scss';
 @import './notice.scss';
+@import './list_image.scss';
+@import './grid_image.scss';
 
 .homepage {
   @media screen and (max-width: $breakpoint_ultra_tablet_max) {
