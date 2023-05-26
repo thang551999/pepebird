@@ -17,7 +17,7 @@ const HomePage = () => {
 
       <BlueBirdQuoteSection />
 
-      {/* <ListImage /> */}
+      <ListImage />
 
       <AboutSection />
 
