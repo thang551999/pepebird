@@ -47,14 +47,38 @@ const RoadMapData = [
   },
 ];
 
+const RoadMapUpdateData = [
+  [
+    'Formation of the team',
+    'Creation of a website and social network presence',
+    'Fair launch on Pinksale',
+    'Demo of the Rent-To-Earn platform',
+    'Listing on CMC, CG, DEXTOOLS',
+    'Marketing efforts',
+  ],
+  [
+    'Update of the Whitepaper to version 2',
+    'Listing on a CEX (Centralized Exchange)',
+    'Commencement of RTE development',
+    'Targeted marketing campaigns in various markets',
+    'Introduction of stage 1 of the RTE program',
+  ],
+  [
+    'Wide-scale application of the platform',
+    'Introduction of stage 2 of the RTE program',
+    'Introduction of mini-games and NFTs',
+    'Roadmap update',
+  ],
+];
+
 const RoadMapSection: FC = () => {
   return (
     <div className='roadmap-wrapper' id='roadmap'>
       <h2>Roadmap</h2>
       <h3>Rough expectation:</h3>
 
-      <section className='ps-timeline-sec'>
-        <div className='container'>
+      {/* <section className='ps-timeline-sec'>
+      <div className='container'>
           <ol className='ps-timeline'>
             {RoadMapData.map((item) => (
               <li key={item.number}>
@@ -67,8 +91,21 @@ const RoadMapSection: FC = () => {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
+        </div> 
+      </section> */}
+
+      <div className='roadmap-wrapper__box'>
+        {RoadMapUpdateData.map((items, idx) => (
+          <div key={idx} className='box'>
+            <h3>phase {idx}</h3>
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

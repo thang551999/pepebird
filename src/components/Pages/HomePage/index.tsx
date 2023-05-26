@@ -5,6 +5,7 @@ import HomePageBanner from './Banner';
 import BlueBirdQuoteSection from './BlueBirdQuote';
 import ClaimBBPEPESection from './ClaimBBPEPE';
 import HowToBuySection from './HowToBuy';
+import ListImage from './ListImage';
 import NoticeSection from './Notice';
 import RoadMapSection from './Roadmap';
 import TokenomicsSection from './Tokenomics';
@@ -15,6 +16,8 @@ const HomePage = () => {
       <HomePageBanner />
 
       <BlueBirdQuoteSection />
+
+      <ListImage />
 
       <AboutSection />
 
