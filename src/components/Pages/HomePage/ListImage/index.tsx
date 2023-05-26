@@ -46,10 +46,11 @@ const ListImage = () => {
 
         <span>Secure your exclusive NFT billboard and maximize your income through renting it out!</span>
       </div>
-
       <div className='list-image__tab'>
         <Tabs defaultActiveKey='1' items={items} onChange={onChange} />
       </div>
+
+      <div className='nft-billboard'>Get your NFT billboard</div>
     </div>
   );
 };
