@@ -98,4 +98,27 @@
     .ant-tabs-content-holder {
     }
   }
+
+  .nft-billboard {
+    max-width: 769px;
+    max-height: 110px;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 25px;
+
+    margin: 0 auto;
+    margin-top: 58px;
+
+    background: linear-gradient(270deg, #78c615 0%, #138840 100%);
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+  }
 }
