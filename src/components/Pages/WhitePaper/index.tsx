@@ -33,13 +33,15 @@ const WhitePaperPage = () => {
     'Presale and liquidity: 81.1%',
     'Burn: 8%',
   ];
-  const SOCIAL = [
-    'Contract: https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283',
-    'Telegram: https://t.me/bluebirdpepeofficial',
-    'Annoucement: https://t.me/bluebirdpepeannoucement',
-    'Twitter: https://twitter.com/BlueBirdPepe',
-    'Website: https://www.bluebirdpepe.com/',
-    'Contact: bluebirdpepeofficial@gmail.com',
+  const SOCIAL = ['Contract: ', 'Telegram: ', 'Annoucement: ', 'Twitter: ', 'Website: ', 'Contact: '];
+
+  const SOCIALINK = [
+    'https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283',
+    'https://t.me/bluebirdpepeofficial',
+    'https://t.me/bluebirdpepeannoucement',
+    'https://twitter.com/BlueBirdPepe',
+    'https://www.bluebirdpepe.com/',
+    'bluebirdpepeofficial@gmail.com',
   ];
 
   return (
@@ -109,6 +111,9 @@ const WhitePaperPage = () => {
             {SOCIAL.map((item, index) => (
               <li style={{ marginBlock: 8 }} key={index}>
                 {item}
+                <a href={SOCIALINK[index]} style={{ color: 'white' }} target='_blank' rel='noreferrer'>
+                  <ins>{SOCIALINK[index]}</ins>
+                </a>
               </li>
             ))}
           </ul>
