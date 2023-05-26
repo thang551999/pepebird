@@ -1,0 +1,47 @@
+.app-whitepaper {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  header {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 56px;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-right: 14px;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 56px;
+      color: #1d9bf0;
+    }
+  }
+
+  .section-description {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 54px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+
+    p {
+      margin-top: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+  }
+}

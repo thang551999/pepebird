@@ -17,6 +17,7 @@ export const navbarItems = [
   { name: 'How to buy', href: '#how-to-buy' },
   { name: 'Tokenomics', href: '#tokenomics' },
   { name: 'Roadmap', href: '#roadmap' },
+  { name: 'Whitepaper', href: '/whitepaper' },
 ];
 
 const Header: FC = () => {
