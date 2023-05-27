@@ -7,8 +7,13 @@
   position: relative;
   z-index: 1;
 
+  width: 100%;
+  height: 100%;
+
   @media only screen and (max-width: $breakpoint_mobile_max) {
-    display: none;
+    // display: none;
+    // width: 375px;
+    // height: 513px;
   }
 
   &__header {
@@ -94,9 +99,6 @@
         }
       }
     }
-
-    .ant-tabs-content-holder {
-    }
   }
 
   .nft-billboard {
@@ -120,5 +122,31 @@
     line-height: 60px;
     text-align: center;
     color: #ffffff;
+
+    @media only screen and (max-width: $breakpoint_mobile_max) {
+      width: 313px;
+      height: 72px;
+      padding: 20px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .container {
+    @media only screen and (max-width: $breakpoint_mobile_max) {
+      display: none;
+    }
+  }
+
+  .fake-bg {
+    display: none;
+
+    @media only screen and (max-width: $breakpoint_mobile_max) {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;
+    }
   }
 }
