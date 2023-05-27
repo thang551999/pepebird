@@ -67,6 +67,13 @@ export const GridImage1 = () => {
             </div>
           ))}
         </div>
+        <div className='grid-image'>
+          {listImagesExample2.map((images: any, index: number) => (
+            <div className={`image-wrapper image-${index + 1}`} key={index}>
+              <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+            </div>
+          ))}
+        </div>
       </Carousel>
     </>
   );
