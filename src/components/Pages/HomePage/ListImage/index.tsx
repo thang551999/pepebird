@@ -1,3 +1,5 @@
+import Image from 'next/legacy/image';
+
 import { Tabs, TabsProps } from 'antd';
 
 import { GridImage1, GridImage2 } from './GridImage';
@@ -41,13 +43,25 @@ const ListImage = () => {
 
   return (
     <div className='list-image'>
-      <div className='list-image__header'>
-        <h3>RENT-TO-EARN (RTE) WITH BBPEPE!</h3>
+      <div className='container'>
+        <div className='list-image__header'>
+          <h3>RENT-TO-EARN (RTE) WITH BBPEPE!</h3>
 
-        <span>Secure your exclusive NFT billboard and maximize your income through renting it out!</span>
+          <span>Secure your exclusive NFT billboard and maximize your income through renting it out!</span>
+        </div>
+        <div className='list-image__tab'>
+          <Tabs defaultActiveKey='1' items={items} onChange={onChange} />
+        </div>
       </div>
-      <div className='list-image__tab'>
-        <Tabs defaultActiveKey='1' items={items} onChange={onChange} />
+
+      <div className='fake-bg'>
+        <Image
+          src='/homepage/ListImage/fake-images-list.webp'
+          alt='Background image'
+          quality={100}
+          width={375}
+          height={513}
+        />
       </div>
 
       <div className='nft-billboard'>Get your NFT billboard</div>

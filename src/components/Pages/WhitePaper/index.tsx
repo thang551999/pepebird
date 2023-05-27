@@ -1,49 +1,49 @@
 import ListImage from '../HomePage/ListImage';
 
+const RoadMapUpdateData = [
+  [
+    'Formation of the team',
+    'Creation of a website and social network presence',
+    'Fair launch on Pinksale',
+    'Demo of the Rent-To-Earn platform',
+    'Listing on CMC, CG, DEXTOOLS',
+    'Marketing efforts',
+  ],
+  [
+    'Update of the Whitepaper to version 2',
+    'Listing on a CEX (Centralized Exchange)',
+    'Commencement of RTE development',
+    'Targeted marketing campaigns in various markets',
+    'Introduction of stage 1 of the RTE program',
+  ],
+  [
+    'Wide-scale application of the platform',
+    'Introduction of stage 2 of the RTE program',
+    'Introduction of mini-games and NFTs',
+    'Roadmap update',
+  ],
+];
+
+const tokennomicsText = [
+  'No taxes, contract renouncement, and audit',
+  'Airdrop: 2%',
+  'Marketing: 2%',
+  'Ecosystem: 6.9%',
+  'Presale and liquidity: 81.1%',
+  'Burn: 8%',
+];
+const SOCIAL = ['Contract: ', 'Telegram: ', 'Annoucement: ', 'Twitter: ', 'Website: ', 'Contact: '];
+
+const SOCIALINK = [
+  'https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283',
+  'https://t.me/bluebirdpepeofficial',
+  'https://t.me/bluebirdpepeannoucement',
+  'https://twitter.com/BlueBirdPepe',
+  'https://www.bluebirdpepe.com/',
+  'bluebirdpepeofficial@gmail.com',
+];
+
 const WhitePaperPage = () => {
-  const RoadMapUpdateData = [
-    [
-      'Formation of the team',
-      'Creation of a website and social network presence',
-      'Fair launch on Pinksale',
-      'Demo of the Rent-To-Earn platform',
-      'Listing on CMC, CG, DEXTOOLS',
-      'Marketing efforts',
-    ],
-    [
-      'Update of the Whitepaper to version 2',
-      'Listing on a CEX (Centralized Exchange)',
-      'Commencement of RTE development',
-      'Targeted marketing campaigns in various markets',
-      'Introduction of stage 1 of the RTE program',
-    ],
-    [
-      'Wide-scale application of the platform',
-      'Introduction of stage 2 of the RTE program',
-      'Introduction of mini-games and NFTs',
-      'Roadmap update',
-    ],
-  ];
-
-  const tokennomicsText = [
-    'No taxes, contract renouncement, and audit',
-    'Airdrop: 2%',
-    'Marketing: 2%',
-    'Ecosystem: 6.9%',
-    'Presale and liquidity: 81.1%',
-    'Burn: 8%',
-  ];
-  const SOCIAL = ['Contract: ', 'Telegram: ', 'Annoucement: ', 'Twitter: ', 'Website: ', 'Contact: '];
-
-  const SOCIALINK = [
-    'https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283',
-    'https://t.me/bluebirdpepeofficial',
-    'https://t.me/bluebirdpepeannoucement',
-    'https://twitter.com/BlueBirdPepe',
-    'https://www.bluebirdpepe.com/',
-    'bluebirdpepeofficial@gmail.com',
-  ];
-
   return (
     <>
       <header>
@@ -78,8 +78,7 @@ const WhitePaperPage = () => {
       <div className='section-description' style={{ color: 'white' }}>
         <h2>III. ROADMAP</h2>
         {RoadMapUpdateData.map((e, i) => (
-          // eslint-disable-next-line react/jsx-key
-          <div style={{ marginTop: 16 }}>
+          <div style={{ marginTop: 16 }} key={i}>
             <h3> Phase {i + 1}:</h3>
             <ul style={{ listStyle: 'inherit', paddingLeft: 15 }}>
               {e.map((item, index) => (
