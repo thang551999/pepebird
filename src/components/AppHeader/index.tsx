@@ -14,9 +14,9 @@ const { useBreakpoint } = Grid;
 
 export const navbarItems = [
   { name: 'About', href: '#about' },
-  { name: 'How to buy', href: '#how-to-buy' },
-  { name: 'Tokenomics', href: '#tokenomics' },
-  { name: 'Roadmap', href: '#roadmap' },
+  { name: 'How to buy', href: '/#how-to-buy' },
+  { name: 'Tokenomics', href: '/#tokenomics' },
+  { name: 'Roadmap', href: '/#roadmap' },
   { name: 'Whitepaper', href: '/whitepaper' },
 ];
 
