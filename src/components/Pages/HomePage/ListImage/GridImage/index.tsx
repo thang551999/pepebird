@@ -1,5 +1,9 @@
-import React from 'react';
 import Image from 'next/legacy/image';
+
+import { Carousel } from 'antd';
+
+import NextIcon from 'resources/svg/NextIcon';
+import PreviousIcon from 'resources/svg/PreviousIcon';
 
 export const listImages = [
   '/homepage/ListImage/1.webp',
@@ -24,13 +28,11 @@ export const listImages = [
 export const listImagesExample2 = [
   '/homepage/ListImage/1.webp',
   '/homepage/ListImage/8.webp',
-
   '/homepage/ListImage/14.webp',
   '/homepage/ListImage/15.webp',
   '/homepage/ListImage/6.webp',
   '/homepage/ListImage/16.webp',
   '/homepage/ListImage/5.webp',
-
   '/homepage/ListImage/2.webp',
   '/homepage/ListImage/3.webp',
   '/homepage/ListImage/10.webp',
@@ -42,28 +44,53 @@ export const listImagesExample2 = [
   '/homepage/ListImage/12.webp',
 ];
 
+const settings = {
+  nextArrow: <NextIcon />,
+  prevArrow: <PreviousIcon />,
+};
+
 export const GridImage1 = () => {
   return (
-    <div className='grid-image'>
-      {listImages.map((images: any, index: number) => (
-        <div className={`image-wrapper image-${index + 1}`} key={index}>
-          <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+    <>
+      <Carousel arrows {...settings} autoplaySpeed={3000}>
+        <div className='grid-image'>
+          {listImages.map((images: any, index: number) => (
+            <div className={`image-wrapper image-${index + 1}`} key={index}>
+              <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+        <div className='grid-image'>
+          {listImagesExample2.map((images: any, index: number) => (
+            <div className={`image-wrapper image-${index + 1}`} key={index}>
+              <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+            </div>
+          ))}
+        </div>
+      </Carousel>
+    </>
   );
 };
 
 export const GridImage2 = () => {
   return (
-    <div className='grid-image'>
-      {listImagesExample2.map((images: any, index: number) => (
-        <div className={`image-wrapper image-${index + 1}`} key={index}>
-          <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+    <>
+      <Carousel arrows {...settings}>
+        <div className='grid-image'>
+          {listImagesExample2.map((images: any, index: number) => (
+            <div className={`image-wrapper image-${index + 1}`} key={index}>
+              <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+        <div className='grid-image'>
+          {listImages.map((images: any, index: number) => (
+            <div className={`image-wrapper image-${index + 1}`} key={index}>
+              <Image src={images} key={index} alt={`Image ${index + 1}`} layout='fill' objectFit='fill' quality={100} />
+            </div>
+          ))}
+        </div>
+      </Carousel>
+    </>
   );
 };
-
-// );
