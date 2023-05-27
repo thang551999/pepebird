@@ -19,12 +19,18 @@ const HomePageBanner = () => {
           <a target='_blank' href='https://twitter.com/BlueBirdPepe' rel='noopener noreferrer'>
             <TwitterIcon />
           </a>
-          <a target='_blank' href='https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283' rel='noopener noreferrer'>
+          <a
+            target='_blank'
+            href='https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283'
+            rel='noopener noreferrer'
+          >
             <BNBIcon />
           </a>
         </Space>
-
-        <Button className='btn-buy-now'>Buy Now</Button>
+        <div style={{display:'flex', flexDirection:'row'}}>
+          <Button className='btn-buy-now'>Buy Now</Button>
+          <a style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'40px', marginLeft:'10px'}} href='https://www.pinksale.finance/launchpad/0x509a51E626E38D7B2956b9265318A3Bb5550C01A?chain=BSC' target='_blank' className='nft-billboard' rel="noreferrer">Presale BBPEPE</a>
+        </div>
       </div>
 
       <div className='homepage-banner__right'>
