@@ -35,7 +35,7 @@ const tokennomicsText = [
 const SOCIAL = ['Contract: ', 'Telegram: ', 'Annoucement: ', 'Twitter: ', 'Website: ', 'Contact: '];
 
 const SOCIALINK = [
-  'https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283',
+  'https://bscscan.com/token/0x3e05F5ca50e6472614Da4e3EAb1cFC77163A1961',
   'https://t.me/bluebirdpepeofficial',
   'https://t.me/bluebirdpepeannoucement',
   'https://twitter.com/BlueBirdPepe',

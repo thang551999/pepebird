@@ -21,7 +21,7 @@ const HomePageBanner = () => {
           </a>
           <a
             target='_blank'
-            href='https://bscscan.com/token/0x091d471d8410cb14451a45f406922f271e356283'
+            href='https://bscscan.com/token/0x3e05F5ca50e6472614Da4e3EAb1cFC77163A1961'
             rel='noopener noreferrer'
           >
             <BNBIcon />
